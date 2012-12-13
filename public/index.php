@@ -9,4 +9,8 @@ chdir(dirname(__DIR__));
 include 'init_autoloader.php';
 
 // Run the application!
-Zend\Mvc\Application::init(include 'config/application.config.php')->run();
+$reader = new Zend\Config\Reader\Yaml('Symfony\Component\Yaml\Yaml::parse');
+
+$config = $reader->fromFile('config/application.config.yml', true);
+
+Zend\Mvc\Application::init($config)->run();

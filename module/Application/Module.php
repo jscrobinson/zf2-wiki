@@ -9,9 +9,9 @@
 
 namespace Application;
 
-use Zend\Mvc\ModuleRouteListener;
+use Zend\Mvc\ModuleRouteListener, Zend\Config, Zend\Config\Reader\Yaml;
 
-class Module
+class Module extends \Psycle\Module\AbstractModule
 {
     public function onBootstrap($e)
     {
@@ -20,11 +20,11 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
     }
-
-    public function getConfig()
-    {
-        return include __DIR__ . '/config/module.config.php';
-    }
+		
+		public function getConfig()
+		{
+			return $this->_getConfig(__DIR__);
+		}
 
     public function getAutoloaderConfig()
     {

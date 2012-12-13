@@ -17,6 +17,13 @@
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
         "zendframework/zendservice-recaptcha": "2.*",
-        "doctrine/common": ">=2.1"
+        "doctrine/common": ">=2.1",
+				"zendframework/zendcloud": "*",
+				"zendframework/zendservice-amazon": "*",
+				"zendframework/zend-memory": "*",
+				"symfony/yaml": "*"
+    },
+		"autoload": {
+        "psycle": {"Psycle": "psycle/"}
     }
 }

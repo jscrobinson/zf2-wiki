@@ -27,8 +27,8 @@ if (getenv('ZF2_PATH')) {           // Support for ZF2_PATH environment variable
     $zf2Path = getenv('ZF2_PATH');
 } elseif (get_cfg_var('zf2_path')) { // Support for zf2_path directive value
     $zf2Path = get_cfg_var('zf2_path');
-} elseif (is_dir('vendor/ZF2/library')) {
-    $zf2Path = 'vendor/ZF2/library';
+} elseif (is_dir('vendor/zendframework/zendframework/library')) {
+    $zf2Path = 'vendor/zendframework/zendframework/library';
 }
 
 if ($zf2Path) {
@@ -47,3 +47,8 @@ if ($zf2Path) {
 if (!class_exists('Zend\Loader\AutoloaderFactory')) {
     throw new RuntimeException('Unable to load ZF2. Run `php composer.phar install` or define a ZF2_PATH environment variable.');
 }
+
+require_once $zf2Path . '/Zend/Loader/ClassMapAutoloader.php';
+$loader = new Zend\Loader\ClassMapAutoloader();
+$loader->registerAutoloadMap(__DIR__ . '/autoload_classmap.php');
+$loader->register();

@@ -11,6 +11,9 @@
  * file.
  */
 
-return array(
-    // ...
-);
+
+return array('Zend\Loader\StandardAutoloader' => array(
+    'namespaces' => array(
+        'Psycle' => dirname(dirname(__DIR__)) . '/vendor/pycle/ext',
+    )
+));
