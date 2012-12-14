@@ -7,3 +7,5 @@ nbproject
 .project
 .settings
 composer.lock
+/public/skins/default/.sass-cache/
+/.sass-cache/

@@ -1,0 +1,3 @@
+[submodule "vendor/EdpSuperluminal"]
+	path = vendor/EdpSuperluminal
+	url = https://github.com/EvanDotPro/EdpSuperluminal.git

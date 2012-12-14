@@ -1,0 +1,53 @@
+router:
+    routes:
+        home:
+            type: Zend\Mvc\Router\Http\Literal
+            options:
+                route: /
+                defaults:
+                    controller: Wiki\Controller\Index
+                    action: index
+        wiki:
+            type: Literal
+            options:
+                route: /wiki
+                defaults:
+                    __NAMESPACE__: Wiki\Controller
+                    controller: Index
+                    action: index
+            may_terminate: true
+            child_routes:
+                default:
+                    type: Segment
+                    options:
+                        route: '/[:controller[/:action]]'
+                        constraints:
+                            controller: '[a-zA-Z][a-zA-Z0-9_-]*'
+                            action: '[a-zA-Z][a-zA-Z0-9_-]*'
+                        defaults: {  }
+service_manager:
+    factories:
+        translator: Zend\I18n\Translator\TranslatorServiceFactory
+translator:
+    locale: en_US
+    translation_file_patterns:
+        -
+            type: gettext
+            base_dir: CURRENT_MODULE_PATH/language
+            pattern: '%s.mo'
+controllers:
+    invokables:
+        Wiki\Controller\Index: Wiki\Controller\IndexController
+view_manager:
+    display_not_found_reason: true
+    display_exceptions: true
+    doctype: HTML5
+    not_found_template: error/404
+    exception_template: error/index
+    template_map:
+        layout/layout: CURRENT_MODULE_PATH/skins/SKIN_NAME/layout/layout.phtml
+        wiki/index/index: CURRENT_MODULE_PATH/skins/SKIN_NAME/wiki/index/index.phtml
+        error/404: CURRENT_MODULE_PATH/skins/SKIN_NAME/error/404.phtml
+        error/index: CURRENT_MODULE_PATH/skins/SKIN_NAME/error/index.phtml
+    template_path_stack:
+        - CURRENT_MODULE_PATH/skins/SKIN_NAME
