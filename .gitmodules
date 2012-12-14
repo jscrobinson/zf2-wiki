@@ -1,3 +1,24 @@
 [submodule "vendor/EdpSuperluminal"]
 	path = vendor/EdpSuperluminal
 	url = https://github.com/EvanDotPro/EdpSuperluminal.git
+[submodule "vendor/doctrine/orm"]
+	path = vendor/doctrine/orm
+	url = https://github.com/doctrine/doctrine2.git
+[submodule "vendor/symfony/Console"]
+	path = vendor/symfony/Console
+	url = https://github.com/symfony/Console.git
+[submodule "vendor/doctrine/data-fixtures"]
+	path = vendor/doctrine/data-fixtures
+	url = https://github.com/doctrine/data-fixtures.git
+[submodule "vendor/doctrine/DoctrineModule"]
+	path = vendor/doctrine/DoctrineModule
+	url = https://github.com/doctrine/DoctrineModule.git
+[submodule "vendor/doctrine/DoctrineORMModule"]
+	path = vendor/doctrine/DoctrineORMModule
+	url = https://github.com/doctrine/DoctrineORMModule.git
+[submodule "vendor/doctrine/dbal"]
+	path = vendor/doctrine/dbal
+	url = https://github.com/doctrine/dbal.git
+[submodule "vendor/doctrine/migrations"]
+	path = vendor/doctrine/migrations
+	url = https://github.com/doctrine/migrations.git

@@ -1,5 +1,7 @@
-modules:
+modules:    
     - Psycle
+    - DoctrineModule
+    - DoctrineORMModule    
     - Wiki    
     - EdpSuperluminal
 module_listener_options:
@@ -8,3 +10,4 @@ module_listener_options:
     module_paths:
         - ./module
         - ./vendor
+        - ./vendor/doctrine

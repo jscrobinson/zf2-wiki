@@ -8,6 +8,7 @@
  */
 
 namespace Psycle;
+use Zend\Loader;
 
 class Module {
 
@@ -15,9 +16,10 @@ class Module {
     public function getAutoloaderConfig()
     {
         return array(
-            'Zend\Loader\StandardAutoloader' => array(
-                'namespaces' => array(
+            Loader\AutoloaderFactory::STANDARD_AUTOLOADER => array(
+                Loader\StandardAutoloader::LOAD_NS => array(
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+                    'Doctrine' => 'vendor/doctrine/orm/lib/Doctrine',
                 ),
             ),
         );
